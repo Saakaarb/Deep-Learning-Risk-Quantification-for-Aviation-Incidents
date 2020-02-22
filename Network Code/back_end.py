@@ -30,14 +30,15 @@ def create_model(num_input_channels,input_shapes,num_LSTM_layers,num_LSTM_units,
         name_string="input"+str(i_channels+1)        
         inputs.append(Input(shape=(input_shapes[i_channels][1],1),name=name_string))
         for i_individual in range(num_LSTM_layers[i_channels]):
-
+            print(i_individual)
             if i_individual==0:
                 outputs.append(LSTM(num_LSTM_units[i_channels][i_individual], input_shape=(input_shapes[i_channels][1],1), activation='relu', return_sequences=True)(inputs[i_channels]))
-            if i_individual==num_LSTM_layers[i_channels]-1:
+            elif i_individual==num_LSTM_layers[i_channels]-1:
                 outputs[i_channels]=LSTM(num_LSTM_units[i_channels][i_individual], input_shape=outputs[i_channels].shape, activation='relu')(outputs[i_channels])
         
         
             else:
+                print("yay")
                 outputs[i_channels]=LSTM(num_LSTM_units[i_channels][i_individual], input_shape=outputs[i_channels].shape, activation='relu', return_sequences=True)(outputs[i_channels])
                 
     #-------------------------------------------------------
