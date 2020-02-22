@@ -220,6 +220,7 @@ input_data.iloc[:,[30]]
 input_data=input_data.iloc[[0,2,4,6,9],:]
 
 
+
 # In[3]:
 print("Cleaning Narrative data")
 
@@ -265,18 +266,10 @@ print(risk_data[0])
 print(encoded_risk[0])
 
 #--------------------------
-# Slice Dataset: Small input dataset for demo purposes
 
-slice_index=5000
-
-input_data=input_data[:slice_index,:]
-narrative_scores=narrative_scores[:slice_index]
-encoded_risk=encoded_risk[:slice_index,:]
-
-print(input_data.shape)
 #
 
-print("Save narrative and input dat using pickle")
+print("Save narrative and input data using pickle, and encoded risk matrix")
 #save the required data
 with open('input_data_test', 'wb') as f:
     pickle.dump(input_data, f)
