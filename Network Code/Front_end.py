@@ -32,14 +32,22 @@ with open('risk_encoding', 'rb') as f:
     
 #Convert Pd to list
 
+#input_data=input_data[:500,:]
+
 input_data=input_data.values.tolist()
+slice_v=5000
+
+for i in range(len(input_data)):
+    input_data[i]=input_data[i][:slice_v]
+narrative_scores=narrative_scores[:slice_v]
+encoded_risk=encoded_risk[:slice_v,:]
 
 num_input_columns=len(input_data)
 
 col=[];
 
 for i_inp in range(num_input_columns):
-    if i_inp==2:
+    if i_inp==2:  # Hard Coded value: colum corresponding to crew size
         continue;
     col.append(input_data[i_inp])
 
@@ -112,7 +120,7 @@ learning_rate=10**(-2);
 inp_optim="Adam";
 reg_param=0;
 batch_sz=256;
-eps=10;
+eps=100;
 val_splt=0;
 
 
