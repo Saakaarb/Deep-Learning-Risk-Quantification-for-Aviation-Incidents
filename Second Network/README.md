@@ -21,10 +21,10 @@ Post Processing script, takes the network and runs predictions, including printi
 **weights**
 ZIP file containing the weights to go with the json string.
 
-![Screenshot1](sentiment.png)
+![Screenshot1](trainable_embedding.png)
 
 Architecture of the network formed by this code
 
-![Screenshot2](sentiment_confusion.png)
+![Screenshot2](learnt_confusion.png)
 
 Confusion Matrix of dev set data printed by this network
