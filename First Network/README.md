@@ -25,4 +25,6 @@ ZIP file containing the weights to go with the json string.
 
 Architecture of the network formed by this code
 
+![Screenshot2](sentiment_confusion.png)
 
+Confusion Matrix of dev set data printed by this network
